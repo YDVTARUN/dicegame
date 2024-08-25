@@ -1,0 +1,43 @@
+/* StartPage.css */
+.start-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+   /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  margin: 150px auto;
+}
+
+.start-container img {
+  max-width: 649px;
+  height: 522px;
+  padding-right: 100px;
+}
+
+.start-title {
+  font-size: 96px; /* Consistent font size */
+  font-weight: 700;
+  line-height: 144px;
+  text-align: center; /* Center title text */
+  margin: 20px 0;
+}
+
+.start-button {
+  padding: 10px 20px;
+  min-width: 222px;
+  text-align: center; /* Center text inside the button */
+  color: white;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block; /* Ensure the button width aligns with text */
+}
+
+.start-button:hover {
+  background-color: #333; /* Slightly lighter black for hover effect */
+}

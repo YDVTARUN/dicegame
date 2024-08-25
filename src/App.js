@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-
+import dices from './imagesdices/dices.png'
+import StartPage from './pages/StartPage'
+import { useState } from 'react';
+import GamePage from './pages/GamePage';
 function App() {
+  const [start,setStart] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+    {!start && <StartPage setStart={setStart}/>}
+    {start && <GamePage/>}
+      
+      
     </div>
   );
 }
