@@ -69,12 +69,13 @@ const GamePage = () => {
 
       {/* Body section */}
       <div className="body-section">
-        <img
+        {/* <img
           src={diceImages[diceNumber - 1]}
           alt={`Dice ${diceNumber}`}
           className="dice-image"
           onClick={rollDice}
-        />
+        /> */}
+        <div onClick={rollDice} className="my-score">{diceNumber}</div>
         <div className="roll-text">Click on Dice to roll</div>
         <button className="reset-button" onClick={resetScore}>Reset Score</button>
         <div></div>
