@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import dice_1 from '../imagesdices/dice_1.png';
-import dice_2 from '../imagesdices/dice_2.png';
-import dice_3 from '../imagesdices/dice_3.png';
-import dice_4 from '../imagesdices/dice_4.png';
-import dice_5 from '../imagesdices/dice_5.png';
-import dice_6 from '../imagesdices/dice_6.png';
-import '../pages/GamePages.css'; // Import the CSS file
+import './GamePages.css'; // Import the CSS file
 
 const GamePage = () => {
   const [score, setScore] = useState(0);
@@ -15,8 +9,15 @@ const GamePage = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [showRules, setShowRules] = useState(false);
 
-  // Array of dice images
-  const diceImages = [dice_1, dice_2, dice_3, dice_4, dice_5, dice_6];
+  // Array of dice images (now accessed directly from the public folder)
+  const diceImages = [
+    '/imagesdices/dice_1.png',
+    '/imagesdices/dice_2.png',
+    '/imagesdices/dice_3.png',
+    '/imagesdices/dice_4.png',
+    '/imagesdices/dice_5.png',
+    '/imagesdices/dice_6.png',
+  ];
 
   const rollDice = () => {
     if (selectedNumber === null) {
@@ -42,31 +43,29 @@ const GamePage = () => {
   return (
     <div className="game-container">
       {/* Top section */}
-      {/* Top section */}
-<div className="top-section">
-  <div className="score-section">
-    <div className="my-score">{score}</div>
-    <div className="my-score-text">Total Score</div>
-  </div>
-  <div className="right-section">
-    <div className="number-selection">
-      {numbers.map((num, index) => (
-        <button
-          key={index}
-          onClick={() => {
-            setSelectedNumber(num);
-            setShowMessage(false); // Hide message when a number is selected
-          }}
-        >
-          {num}
-        </button>
-      ))}
-    </div>
-    <div className="select-number-text">Select Number</div>
-    {showMessage && <div className="message">Please select a number to proceed</div>}
-  </div>
-</div>
-
+      <div className="top-section">
+        <div className="score-section">
+          <div className="my-score">{score}</div>
+          <div className="my-score-text">Total Score</div>
+        </div>
+        <div className="right-section">
+          <div className="number-selection">
+            {numbers.map((num, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setSelectedNumber(num);
+                  setShowMessage(false); // Hide message when a number is selected
+                }}
+              >
+                {num}
+              </button>
+            ))}
+          </div>
+          <div className="select-number-text">Select Number</div>
+          {showMessage && <div className="message">Please select a number to proceed</div>}
+        </div>
+      </div>
 
       {/* Body section */}
       <div className="body-section">
